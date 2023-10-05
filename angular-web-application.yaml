@@ -1,0 +1,18 @@
+namespace: angular-web-application
+angular-web-application:
+  defines: runnable
+  metadata:
+    name: angular-web-application
+    description: This is a web application built with Angular and served on port 4200.
+    icon: https://angular.io/assets/images/logos/angular/angular.png
+  containers:
+    angular-web-application:
+      build: .
+  services:
+    app-port:
+      container: angular-web-application
+      port: 4200
+      host-port: 4200
+      publish: false
+      protocol: TCP
+      description: This port is used to serve the Angular application.
